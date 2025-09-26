@@ -33,7 +33,6 @@ For more detailed discussions, project collaborations, or professional inquiries
 - **Project collaborations** - Open source contributions or interesting side projects
 - **Technical discussions** - New technologies, best practices, or industry trends
 - **Learning resources** - Great books, courses, or tools you'd recommend
-- **Speaking opportunities** - Tech talks, workshops, or conference presentations
 - **Mentorship** - Both seeking advice and offering guidance to fellow developers
 
 ## Response Time
@@ -46,26 +45,7 @@ I'm particularly interested in:
 
 - **Open Source Projects** - Contributing to meaningful projects that make a difference
 - **Technical Writing** - Guest posts, documentation, or educational content
-- **Code Reviews** - Helping improve code quality and sharing knowledge
 - **Mentoring** - Guiding junior developers and sharing industry insights
-
-## Before You Reach Out
-
-To help me provide the best response:
-
-1. **Be specific** - Clear questions get clear answers
-2. **Include context** - Let me know your background and what you're trying to achieve
-3. **Check the blog first** - I might have already covered your topic
-4. **Be patient** - I read every message but may need time for thoughtful responses
-
-## Community Guidelines
-
-I believe in fostering a positive, inclusive tech community. When reaching out:
-
-- Be respectful and professional
-- Embrace diversity of thought and experience  
-- Focus on constructive discussions
-- Share knowledge freely and openly
 
 ---
 
