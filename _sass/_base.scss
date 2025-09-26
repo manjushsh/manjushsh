@@ -206,24 +206,24 @@ hr {
 
 .btn-primary {
   background-color: var(--primary-color);
-  color: white;
+  color: white !important;
 }
 
 .btn-primary:hover {
   background-color: var(--primary-dark);
   text-decoration: none;
-  color: white;
+  color: white !important;
 }
 
 .btn-secondary {
   background-color: var(--secondary-color);
-  color: white;
+  color: white !important;
 }
 
 .btn-secondary:hover {
   background-color: var(--secondary-dark);
   text-decoration: none;
-  color: white;
+  color: white !important;
 }
 
 .btn-outline {

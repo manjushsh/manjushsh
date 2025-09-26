@@ -34,6 +34,12 @@ My journey in software development has been filled with exciting challenges and 
 - **Technologies**: Cloud computing, DevOps, Machine Learning
 - **Methodologies**: Agile development, Test-driven development
 
+## My GitHub Activity
+
+Here's a snapshot of my recent coding activity:
+
+![Manjush's GitHub stats](https://github-readme-stats.vercel.app/api?username=manjushsh&show_icons=true&theme=dark)
+
 ## Connect With Me
 
 I love connecting with fellow developers and tech enthusiasts! Feel free to reach out:

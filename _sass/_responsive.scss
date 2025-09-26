@@ -95,13 +95,13 @@
     align-items: flex-start;
   }
   
-  /* Hero links */
-  .hero-links {
+  /* Hero actions */
+  .hero-actions {
     flex-direction: column;
     align-items: center;
   }
   
-  .hero-link {
+  .hero-actions .btn {
     width: 200px;
     text-align: center;
   }
