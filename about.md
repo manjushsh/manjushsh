@@ -18,9 +18,6 @@ I'm a passionate software developer with a love for clean code, innovative solut
 This blog serves as a platform where I share:
 
 - **Programming Tutorials**: Step-by-step guides on various technologies and frameworks
-- **Code Reviews**: Analysis of interesting code patterns and best practices  
-- **Tech Insights**: Thoughts on industry trends and emerging technologies
-- **Problem Solving**: Solutions to challenging coding problems and algorithms
 - **Project Showcases**: Walkthroughs of personal and professional projects
 
 ### Skills & Interests
