@@ -81,8 +81,10 @@
 
 .nav-link.active {
   color: white !important;
-  background-color: var(--primary-color);
+  background: var(--primary-gradient);
   text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
 }
 
 .mobile-menu-toggle {
@@ -137,10 +139,21 @@
 
 /* Footer */
 .site-footer {
-  background-color: var(--bg-secondary);
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
   border-top: 1px solid var(--border-color);
-  padding: var(--space-2xl) 0 var(--space-lg);
+  padding: var(--space-3xl) 0 var(--space-lg);
   margin-top: var(--space-3xl);
+  position: relative;
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--primary-gradient);
 }
 
 .footer-content {
