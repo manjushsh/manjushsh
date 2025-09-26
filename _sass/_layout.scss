@@ -73,10 +73,15 @@
   transition: all var(--transition-fast);
 }
 
-.nav-link:hover,
-.nav-link.active {
+.nav-link:hover {
   color: var(--primary-color);
   background-color: var(--bg-hover);
+  text-decoration: none;
+}
+
+.nav-link.active {
+  color: white !important;
+  background-color: var(--primary-color);
   text-decoration: none;
 }
 
@@ -121,6 +126,12 @@
 .mobile-nav-link:hover {
   color: var(--primary-color);
   background-color: var(--bg-hover);
+  text-decoration: none;
+}
+
+.mobile-nav-link.active {
+  color: white !important;
+  background-color: var(--primary-color);
   text-decoration: none;
 }
 
