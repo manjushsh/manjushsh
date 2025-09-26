@@ -43,7 +43,7 @@ I love connecting with fellow developers and tech enthusiasts! Feel free to reac
 - **GitHub**: [github.com/manjushsh](https://github.com/manjushsh)
 - **Dev.to**: [dev.to/manjushsh](https://dev.to/manjushsh)
 
-## Blog Philosophy
+## Philosophy
 
 I believe in:
 

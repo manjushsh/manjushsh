@@ -43,9 +43,9 @@ I established non-negotiable principles:
 
 These became **automated quality gates** for every piece of code.
 
-![Speckit Init](/assets/images/article/gh-speckkit/1-speckit-init.png)
+![Speckit Init](manjushsh/assets/images/article/gh-speckkit/1-speckit-init.png)
 
-![Constitution](/assets/images/article/gh-speckkit/4-constitution.png)
+![Constitution](manjushsh/assets/images/article/gh-speckkit/4-constitution.png)
 
 ### Step 2: Specification
 I focused on user value, not tech choices:
@@ -62,7 +62,7 @@ Only after requirements were clear did I choose my stack:
 - **Charts**: [Nivo](https://nivo.rocks/) for interactive visualizations
 
 
-![Plan](/assets/images/article/gh-speckkit/6-plan.png)
+![Plan](manjushsh/assets/images/article/gh-speckkit/6-plan.png)
 
 SpecKit generated: **7 entities, 16 API endpoints, 39 numbered tasks**.
 
