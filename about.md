@@ -39,6 +39,7 @@ I love connecting with fellow developers and tech enthusiasts! Feel free to reac
 
 - **GitHub**: [github.com/manjushsh](https://github.com/manjushsh)
 - **Dev.to**: [dev.to/manjushsh](https://dev.to/manjushsh)
+- **Email**: [dpbzbpj6v@mozmail.com](mailto:dpbzbpj6v@mozmail.com)
 
 ## Philosophy
 
