@@ -3,17 +3,19 @@ title: "Manjush's Blog"
 description: "A collection of thoughts, tutorials, and insights on software development"
 author: "Manjush"
 email: "your-email@example.com"
-url: "https://manjushsh.github.io/manjushsh"
-baseurl: ""
+url: "https://manjushsh.github.io"
+baseurl: "/manjushsh"
 
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+
+# Permalink structure for posts
+permalink: /blog/:year/:month/:day/:title/
 
 # Kramdown settings
 kramdown:
@@ -30,11 +32,10 @@ kramdown:
 collections:
   posts:
     output: true
-    permalink: /blog/:year/:month/:day/:title/
 
-# Pagination
-paginate: 10
-paginate_path: "/blog/page:num/"
+# Pagination (disabled for now to avoid issues)
+# paginate: 10
+# paginate_path: "/blog/page:num/"
 
 # Social links
 social_links:
