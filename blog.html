@@ -1,0 +1,112 @@
+---
+layout: page
+title: "Blog"
+description: "All my posts about software development, tutorials, and tech insights"
+permalink: /blog/
+---
+
+<div class="blog-header">
+  <div class="blog-search">
+    <input type="text" id="search-input" placeholder="Search posts..." class="search-input">
+    <button id="search-button" class="search-button">Search</button>
+  </div>
+</div>
+
+<div class="blog-content">
+  {% if site.posts.size > 0 %}
+    <div class="posts-list">
+      {% for post in site.posts %}
+        <article class="post-preview">
+          <header class="post-preview-header">
+            <h2 class="post-preview-title">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h2>
+            
+            <div class="post-preview-meta">
+              <time datetime="{{ post.date | date_to_xmlschema }}">
+                {{ post.date | date: "%B %d, %Y" }}
+              </time>
+              {% if post.tags.size > 0 %}
+                <div class="post-preview-tags">
+                  {% for tag in post.tags %}
+                    <a href="/tags/#{{ tag | slugify }}" class="tag-link">#{{ tag }}</a>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          </header>
+
+          {% if post.featured_image %}
+            <div class="post-preview-image">
+              <a href="{{ post.url | relative_url }}">
+                <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}" loading="lazy">
+              </a>
+            </div>
+          {% endif %}
+
+          <div class="post-preview-content">
+            {% if post.excerpt %}
+              {{ post.excerpt }}
+            {% else %}
+              <p>{{ post.content | strip_html | truncate: 250 }}</p>
+            {% endif %}
+            
+            <a href="{{ post.url | relative_url }}" class="read-more-link">
+              Continue reading →
+            </a>
+          </div>
+        </article>
+        
+        {% unless forloop.last %}
+          <hr class="post-divider">
+        {% endunless %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="no-posts-message">
+      <h2>No posts yet!</h2>
+      <p>The blog is just getting started. Check back soon for exciting content about software development, tutorials, and tech insights.</p>
+    </div>
+  {% endif %}
+</div>
+
+<!-- Simple JavaScript for search functionality -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchButton = document.getElementById('search-button');
+  const posts = document.querySelectorAll('.post-preview');
+
+  function performSearch() {
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    
+    posts.forEach(post => {
+      const title = post.querySelector('.post-preview-title').textContent.toLowerCase();
+      const content = post.querySelector('.post-preview-content').textContent.toLowerCase();
+      const tags = post.querySelector('.post-preview-tags');
+      const tagsText = tags ? tags.textContent.toLowerCase() : '';
+      
+      if (title.includes(searchTerm) || content.includes(searchTerm) || tagsText.includes(searchTerm)) {
+        post.style.display = 'block';
+      } else {
+        post.style.display = 'none';
+      }
+    });
+  }
+
+  searchButton.addEventListener('click', performSearch);
+  searchInput.addEventListener('keyup', function(e) {
+    if (e.key === 'Enter') {
+      performSearch();
+    }
+  });
+  
+  searchInput.addEventListener('input', function() {
+    if (this.value === '') {
+      posts.forEach(post => {
+        post.style.display = 'block';
+      });
+    }
+  });
+});
+</script>

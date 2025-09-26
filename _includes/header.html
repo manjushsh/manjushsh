@@ -1,0 +1,64 @@
+<header class="site-header">
+  <div class="container">
+    <div class="header-content">
+      <div class="site-branding">
+        <a href="{{ '/' | relative_url }}" class="site-title">
+          <span class="site-name">{{ site.title }}</span>
+        </a>
+        {% if site.description %}
+          <p class="site-tagline">{{ site.description }}</p>
+        {% endif %}
+      </div>
+
+      <nav class="main-navigation">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ '/blog/' | relative_url }}" class="nav-link {% if page.url contains '/blog' %}active{% endif %}">
+              Blog
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ '/about/' | relative_url }}" class="nav-link {% if page.url == '/about/' %}active{% endif %}">
+              About
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ '/contact/' | relative_url }}" class="nav-link {% if page.url == '/contact/' %}active{% endif %}">
+              Contact
+            </a>
+          </li>
+        </ul>
+
+        <!-- Mobile menu toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu">
+    <ul class="mobile-nav-menu">
+      <li class="mobile-nav-item">
+        <a href="{{ '/' | relative_url }}" class="mobile-nav-link">Home</a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="{{ '/blog/' | relative_url }}" class="mobile-nav-link">Blog</a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="{{ '/about/' | relative_url }}" class="mobile-nav-link">About</a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="{{ '/contact/' | relative_url }}" class="mobile-nav-link">Contact</a>
+      </li>
+    </ul>
+  </div>
+</header>
