@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "JavaScript ES6+ Features Every Developer Should Know"
+title: "Test Article: JavaScript ES6+ Features Every Developer Should Know"
 date: 2025-09-25 14:30:00 +0000
 author: "Manjush"
-tags: [javascript, es6, programming, tutorial]
-featured_image: /assets/images/javascript-es6.jpg
+tags: [test, javascript, es6, programming, tutorial]
+featured_image: https://picsum.photos/1366/768
 excerpt: "Explore the most powerful ES6+ features that will make your JavaScript code more elegant, readable, and efficient."
 ---
 
-# JavaScript ES6+ Features Every Developer Should Know
+# Test Article: JavaScript ES6+ Features Every Developer Should Know
 
 JavaScript has evolved tremendously over the years. The introduction of ES6 (ECMAScript 2015) and subsequent versions brought powerful features that revolutionized how we write JavaScript. Let's explore the most impactful ones!
 
