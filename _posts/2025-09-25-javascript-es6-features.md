@@ -2,7 +2,7 @@
 layout: post
 title: "Test Article: JavaScript ES6+ Features Every Developer Should Know"
 date: 2025-09-25 14:30:00 +0000
-author: "Manjush"
+author: "manjushsh"
 tags: [test, javascript, es6, programming, tutorial]
 featured_image: https://picsum.photos/1366/768
 excerpt: "Explore the most powerful ES6+ features that will make your JavaScript code more elegant, readable, and efficient."

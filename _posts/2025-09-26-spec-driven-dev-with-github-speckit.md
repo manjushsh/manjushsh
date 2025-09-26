@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "From Spec to Deploy: Building an Expense Tracker with SpecKit"
-date: 2025-09-26 22:30:00 +0000
+date: 2025-09-26 03:30:00 +0000
 author: "manjushsh"
 tags: [spec-driven-development, github, speckit]
 featured_image: /assets/images/featured/speckit.jpg

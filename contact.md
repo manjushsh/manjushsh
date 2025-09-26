@@ -17,19 +17,15 @@ I'm always excited to connect with fellow developers, potential collaborators, o
   - Check out my repositories and contributions
   - Feel free to open issues or discussions on any of my projects
 
-- **HackerRank**: [hackerrank.com/manjushsh](https://www.hackerrank.com/manjushsh)
-  - View my coding challenges and solutions
-  - Connect for programming discussions
-
-- **HackerEarth**: [hackerearth.com/@manjushsh](https://www.hackerearth.com/@manjushsh)
-  - Explore my competitive programming journey
-  - Let's challenge each other with coding problems!
+- **Dev.to**: [dev.to/manjushsh](https://dev.to/manjushsh)
+  - Follow me for more articles and insights
+  - Engage with my posts and share your thoughts
 
 ### Email
 
 For more detailed discussions, project collaborations, or professional inquiries, feel free to send me an email:
 
-📧 **your-email@example.com** *(Update this with your actual email)*
+📧 **dpbzbpj6v@mozmail.com**
 
 ## What I'd Love to Hear About
 

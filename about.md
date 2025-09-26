@@ -5,7 +5,7 @@ description: "Learn more about me and this blog"
 permalink: /about/
 ---
 
-# Hello, I'm Manjush! 👋
+# Hello, I'm manjushsh! 👋
 
 Welcome to my personal blog where I share my journey in software development, programming insights, and technical experiences.
 
@@ -23,44 +23,37 @@ This blog serves as a platform where I share:
 - **Problem Solving**: Solutions to challenging coding problems and algorithms
 - **Project Showcases**: Walkthroughs of personal and professional projects
 
-## My Coding Journey
-
-My journey in software development has been filled with exciting challenges and constant learning. From my early days writing simple scripts to building complex applications, I've always been fascinated by the power of code to solve real-world problems.
-
 ### Skills & Interests
 
-- **Languages**: Python, JavaScript, Java, C++, and more
-- **Frameworks**: React, Node.js, Django, Spring Boot
-- **Technologies**: Cloud computing, DevOps, Machine Learning
+- **Languages**: Python, JavaScript, Go, and more
+- **Frameworks**: React, Node.js, Django
+- **Technologies**: -
 - **Methodologies**: Agile development, Test-driven development
 
 ## My GitHub Activity
 
 Here's a snapshot of my recent coding activity:
 
-![Manjush's GitHub stats](https://github-readme-stats.vercel.app/api?username=manjushsh&show_icons=true&theme=dark)
+![manjushsh's GitHub stats](https://github-readme-stats.vercel.app/api?username=manjushsh&show_icons=true&theme=dark)
 
 ## Connect With Me
 
 I love connecting with fellow developers and tech enthusiasts! Feel free to reach out:
 
 - **GitHub**: [github.com/manjushsh](https://github.com/manjushsh)
-- **HackerRank**: [hackerrank.com/manjushsh](https://www.hackerrank.com/manjushsh)  
-- **HackerEarth**: [hackerearth.com/@manjushsh](https://www.hackerearth.com/@manjushsh)
+- **Dev.to**: [dev.to/manjushsh](https://dev.to/manjushsh)
 
 ## Blog Philosophy
 
 I believe in:
 
-- **Quality over Quantity**: Every post is carefully crafted with practical value
+- **Quality over Quantity**: When something is carefully crafted with practical value
 - **Learning Together**: Programming is better when we help each other grow
 - **Real-World Focus**: Content that you can actually use in your projects
 - **Continuous Improvement**: Always learning and sharing new discoveries
 
 ## Fun Facts
-
-- ☕ Coffee fuels my coding sessions
-- 🎮 I enjoy solving algorithmic puzzles in my free time  
+ 
 - 📚 Always reading about new technologies and methodologies
 - 🌱 Passionate about mentoring junior developers
 

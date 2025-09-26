@@ -1,4 +1,4 @@
-# Manjush's Blog
+# manjushsh's Blog
 
 A modern, responsive blog built with Jekyll and hosted on GitHub Pages. Features engaging content about software development, programming tutorials, and tech insights.
 
