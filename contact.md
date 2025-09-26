@@ -25,7 +25,7 @@ I'm always excited to connect with fellow developers, potential collaborators, o
 
 For more detailed discussions, project collaborations, or professional inquiries, feel free to send me an email:
 
-📧 **dpbzbpj6v@mozmail.com**
+📧 **[dpbzbpj6v@mozmail.com](mailto:dpbzbpj6v@mozmail.com)**
 
 ## What I'd Love to Hear About
 
