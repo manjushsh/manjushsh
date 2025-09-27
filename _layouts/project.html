@@ -43,9 +43,9 @@ layout: default
     {% if page.preview_image %}
       <div class="project-preview">
         {% if page.preview_image contains 'http' %}
-          <img src="{{ page.preview_image }}" alt="{{ page.title }} preview" class="project-image" onerror=`this.src='https://manjushsh.github.io/manjushsh/assets/images/live-demo.png'; this.onerror=null;`>
+          <img src="{{ page.preview_image }}" alt="{{ page.title }} preview" class="project-image" onerror="this.src='https://manjushsh.github.io/manjushsh/assets/images/live-demo.png'; this.onerror=null;"">
         {% else %}
-          <img src="{{ page.preview_image | relative_url }}" alt="{{ page.title }} preview" class="project-image" onerror=`this.src='https://manjushsh.github.io/manjushsh/assets/images/live-demo.png'; this.onerror=null;`>
+          <img src="{{ page.preview_image | relative_url }}" alt="{{ page.title }} preview" class="project-image" onerror="this.src='https://manjushsh.github.io/manjushsh/assets/images/live-demo.png'; this.onerror=null;">
         {% endif %}
       </div>
     {% endif %}
