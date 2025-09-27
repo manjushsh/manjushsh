@@ -11,7 +11,7 @@
     {% elsif include.project.demo_url %}
       <div class="project-image project-preview-placeholder" 
            data-url="{{ include.project.demo_url }}"
-           {% if include.project.og_fallback_image %}data-fallback-image="{{ include.project.og_fallback_image }}"{% endif %}>
+           {% if include.project.preview_image %}data-preview-image="{{ include.project.preview_image }}"{% endif %}>
         <div class="preview-loader">Loading preview...</div>
       </div>
     {% endif %}

@@ -73,6 +73,24 @@
   object-fit: cover;
 }
 
+.preview-custom {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+
+.preview-error {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  text-align: center;
+  padding: var(--space-xl);
+  background: var(--bg-primary);
+}
+
+.preview-fallback {
+  background: var(--bg-primary) !important;
+}
+
 .preview-language {
   position: absolute;
   top: var(--space-sm);
