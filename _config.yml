@@ -32,6 +32,9 @@ kramdown:
 collections:
   posts:
     output: true
+  projects:
+    output: true
+    permalink: /:collection/:name/
 
 # Pagination (disabled for now to avoid issues)
 # paginate: 10
@@ -51,6 +54,11 @@ defaults:
     values:
       layout: "post"
       comments: true
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
   - scope:
       path: ""
     values:

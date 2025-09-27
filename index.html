@@ -69,6 +69,29 @@ layout: default
   </div>
 </section>
 
+<section class="featured-projects">
+  <div class="container">
+    <div class="featured-projects-header">
+      <h2 class="featured-projects-title">Featured Projects</h2>
+      <a href="{{ '/projects/' | relative_url }}" class="view-all-projects">View All Projects →</a>
+    </div>
+    
+    {% assign featured_projects = site.projects | where: "featured", true | sort: 'date' | reverse %}
+    {% if featured_projects.size > 0 %}
+      <div class="projects-grid">
+        {% for project in featured_projects limit:3 %}
+          {% include project-card.html project=project %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="no-projects">
+        <p>Featured projects coming soon! I'm working on some exciting projects to showcase here.</p>
+        <a href="{{ '/projects/' | relative_url }}" class="btn btn-secondary">Explore Projects</a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
 <section class="home-about">
   <div class="container">
     <div class="about-content">
@@ -85,3 +108,5 @@ layout: default
     </div>
   </div>
 </section>
+
+<script src="{{ '/assets/js/url-preview.js' | relative_url }}"></script>
