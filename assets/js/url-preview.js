@@ -28,10 +28,13 @@ class URLPreviewManager {
             // Show loading state
             element.querySelector('.preview-loader').style.display = 'block';
 
+            // Get fallback image from data attribute
+            const fallbackImage = element.getAttribute('data-fallback-image');
+
             let previewData = this.cache.get(url);
 
             if (!previewData) {
-                previewData = await this.fetchPreviewData(url);
+                previewData = await this.fetchPreviewData(url, fallbackImage);
                 this.cache.set(url, previewData);
             }
 
@@ -47,14 +50,14 @@ class URLPreviewManager {
         }
     }
 
-    async fetchPreviewData(url) {
+    async fetchPreviewData(url, fallbackImage = null) {
         // For GitHub URLs, use GitHub API
         if (url.includes('github.com')) {
             return await this.fetchGitHubPreview(url);
         }
 
         // For other URLs, create appropriate preview
-        return await this.fetchGenericPreview(url);
+        return await this.fetchGenericPreview(url, fallbackImage);
     }
 
     async fetchGitHubPreview(githubUrl) {
@@ -142,7 +145,7 @@ class URLPreviewManager {
         return canvas.toDataURL();
     }
 
-    async fetchGenericPreview(url) {
+    async fetchGenericPreview(url, fallbackImage = null) {
         // Try to fetch Open Graph data first
         try {
             const ogData = await this.fetchOpenGraphData(url);
@@ -151,6 +154,16 @@ class URLPreviewManager {
             }
         } catch (error) {
             console.warn('Failed to fetch Open Graph data for:', url, error);
+        }
+
+        // Use configured fallback image if available
+        if (fallbackImage) {
+            console.log('Using configured fallback image:', fallbackImage);
+            return {
+                title: this.getTitleFromUrl(url),
+                description: this.getDescriptionFromUrl(url),
+                image: fallbackImage
+            };
         }
 
         // Fallback to generated preview
@@ -178,6 +191,34 @@ class URLPreviewManager {
             description: description,
             image: this.generateGenericPreviewImage(url)
         };
+    }
+
+    getTitleFromUrl(url) {
+        const domain = this.extractDomainFromUrl(url);
+        
+        // Customize based on known domains
+        if (url.includes('vercel.app')) {
+            return 'Vercel Deployment';
+        } else if (url.includes('netlify.app')) {
+            return 'Netlify Deployment';
+        } else if (url.includes('herokuapp.com')) {
+            return 'Heroku App';
+        } else {
+            return domain;
+        }
+    }
+
+    getDescriptionFromUrl(url) {
+        // Customize based on known domains
+        if (url.includes('vercel.app')) {
+            return 'Live application hosted on Vercel';
+        } else if (url.includes('netlify.app')) {
+            return 'Live application hosted on Netlify';
+        } else if (url.includes('herokuapp.com')) {
+            return 'Live application on Heroku';
+        } else {
+            return 'Live demo application';
+        }
     }
 
     async fetchOpenGraphData(url) {
