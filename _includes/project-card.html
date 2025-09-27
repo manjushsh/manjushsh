@@ -9,9 +9,7 @@
         <div class="preview-loader">Loading preview...</div>
       </div>
     {% elsif include.project.demo_url %}
-      <div class="project-image project-preview-placeholder" 
-           data-url="{{ include.project.demo_url }}"
-           {% if include.project.preview_image %}data-preview-image="{{ include.project.preview_image }}"{% endif %}>
+      <div class="project-image project-preview-placeholder" data-url="{{ include.project.demo_url }}">
         <div class="preview-loader">Loading preview...</div>
       </div>
     {% endif %}

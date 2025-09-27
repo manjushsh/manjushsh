@@ -28,13 +28,6 @@ class URLPreviewManager {
       // Show loading state
       element.querySelector('.preview-loader').style.display = 'block';
 
-      // Check for custom preview image first
-      const customPreviewImage = element.dataset.previewImage;
-      if (customPreviewImage) {
-        this.renderCustomPreview(element, customPreviewImage, url);
-        return;
-      }
-
       let previewData = this.cache.get(url);
       
       if (!previewData) {
@@ -228,14 +221,6 @@ class URLPreviewManager {
     } catch {
       return 'Live Demo';
     }
-  }
-
-  renderCustomPreview(element, imageUrl, url) {
-    // Handle custom preview images from project configuration
-    element.innerHTML = `
-      <img src="${imageUrl}" alt="Project preview" loading="lazy" class="preview-custom" 
-           onerror="this.parentElement.innerHTML='<div class=\\'preview-error\\'>Preview unavailable</div>'; this.parentElement.classList.add('preview-fallback');">
-    `;
   }
 
   renderPreview(element, previewData) {
