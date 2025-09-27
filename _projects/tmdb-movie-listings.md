@@ -8,7 +8,6 @@ tech_stack:
   - "The Movie Database API"
   - "CSS3"
   - "Vercel"
-github_url: "https://github.com/manjushsh/tmdb-movie-listings"
 demo_url: "https://tmdb-movie-listings.vercel.app/"
 status: "active"
 featured: true

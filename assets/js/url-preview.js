@@ -53,7 +53,7 @@ class URLPreviewManager {
       return await this.fetchGitHubPreview(url);
     }
     
-    // For other URLs, try to extract meta tags (limited by CORS)
+    // For other URLs, create appropriate preview
     return await this.fetchGenericPreview(url);
   }
 
@@ -143,10 +143,29 @@ class URLPreviewManager {
   }
 
   async fetchGenericPreview(url) {
-    // Due to CORS limitations, we'll create a fallback preview
+    // Create appropriate preview based on URL type
+    const domain = this.extractDomainFromUrl(url);
+    let title = 'Live Demo';
+    let description = 'Interactive demo available';
+    
+    // Customize based on known domains
+    if (url.includes('vercel.app')) {
+      title = 'Vercel Deployment';
+      description = 'Live application hosted on Vercel';
+    } else if (url.includes('netlify.app')) {
+      title = 'Netlify Deployment';
+      description = 'Live application hosted on Netlify';
+    } else if (url.includes('herokuapp.com')) {
+      title = 'Heroku App';
+      description = 'Live application on Heroku';
+    } else {
+      title = domain;
+      description = 'Live demo application';
+    }
+    
     return {
-      title: this.extractDomainFromUrl(url),
-      description: 'Live demo available',
+      title: title,
+      description: description,
       image: this.generateGenericPreviewImage(url)
     };
   }
@@ -158,36 +177,40 @@ class URLPreviewManager {
     canvas.width = 400;
     canvas.height = 200;
 
-    // Background gradient
+    // Different gradients based on domain
     const gradient = ctx.createLinearGradient(0, 0, 400, 200);
-    gradient.addColorStop(0, '#667eea');
-    gradient.addColorStop(1, '#764ba2');
+    if (url.includes('vercel.app')) {
+      gradient.addColorStop(0, '#000000');
+      gradient.addColorStop(1, '#333333');
+    } else if (url.includes('netlify.app')) {
+      gradient.addColorStop(0, '#00ad9f');
+      gradient.addColorStop(1, '#32e0cd');
+    } else {
+      gradient.addColorStop(0, '#667eea');
+      gradient.addColorStop(1, '#764ba2');
+    }
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, 400, 200);
 
-    // Globe icon (simplified)
-    ctx.strokeStyle = '#ffffff';
-    ctx.lineWidth = 3;
+    // Play icon for demo sites
+    ctx.fillStyle = '#ffffff';
     ctx.beginPath();
-    ctx.arc(200, 100, 40, 0, Math.PI * 2);
-    ctx.stroke();
-    
-    // Horizontal lines
-    ctx.beginPath();
-    ctx.moveTo(160, 100);
-    ctx.lineTo(240, 100);
-    ctx.stroke();
-    
-    // Vertical curve
-    ctx.beginPath();
-    ctx.ellipse(200, 100, 20, 40, 0, 0, Math.PI * 2);
-    ctx.stroke();
+    ctx.moveTo(160, 70);
+    ctx.lineTo(160, 130);
+    ctx.lineTo(220, 100);
+    ctx.closePath();
+    ctx.fill();
+
+    // Demo text
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 24px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('LIVE DEMO', 200, 160);
 
     // Domain name
-    ctx.fillStyle = '#ffffff';
-    ctx.font = 'bold 18px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText(this.extractDomainFromUrl(url), 200, 170);
+    ctx.font = '14px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+    ctx.fillText(this.extractDomainFromUrl(url), 200, 180);
 
     return canvas.toDataURL();
   }
