@@ -2,7 +2,11 @@
   <div class="project-card-header">
     {% if include.project.preview_image %}
       <div class="project-image">
-        <img src="{{ include.project.preview_image | relative_url }}" alt="{{ include.project.title }}" loading="lazy">
+        {% if include.project.preview_image contains 'http' %}
+          <img src="{{ include.project.preview_image }}" alt="{{ include.project.title }}" loading="lazy">
+        {% else %}
+          <img src="{{ include.project.preview_image | relative_url }}" alt="{{ include.project.title }}" loading="lazy">
+        {% endif %}
       </div>
     {% elsif include.project.github_url %}
       <div class="project-image project-preview-placeholder" data-url="{{ include.project.github_url }}">
