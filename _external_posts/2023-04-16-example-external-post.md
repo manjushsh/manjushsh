@@ -1,6 +1,6 @@
 ---
 title: "Example External Post: Modern JavaScript Development Practices"
-date: 2024-04-16
+date: 2023-04-16
 author: "manjushsh"
 external_url: "https://dev.to/manjushsh/modern-javascript-development-practices"
 platform: "Dev.to"
