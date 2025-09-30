@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Test Article: JavaScript ES6+ Features Every Developer Should Know"
-date: 2025-09-25 14:30:00 +0000
+date: 2023-02-25 14:30:00 +0000
 author: "manjushsh"
 tags: [test, javascript, es6, programming, tutorial]
 featured_image: https://picsum.photos/1366/768
