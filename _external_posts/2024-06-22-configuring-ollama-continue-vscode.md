@@ -11,7 +11,7 @@ external: true
 categories: [AI, Development Tools, VS Code]
 ---
 
-This post was originally published on [Dev.to]({{ page.external_url }}). Click the link above to read the full article about configuring Ollama and Continue VS Code extension for local AI-powered coding assistance.
+This post was originally published on [Dev.to]({{ page.external_url }}). [Article on Github](https://manjushsh.github.io/local-code-completion-configs/). Click the link above to read the full article about configuring Ollama and Continue VS Code extension for local AI-powered coding assistance.
 
 ## Summary
 
