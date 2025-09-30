@@ -5,7 +5,7 @@ author: "manjushsh"
 external_url: "https://dev.to/manjushsh/configuring-ollama-and-continue-vs-code-extension-for-local-coding-assistant-48li"
 platform: "Dev.to"
 tags: [ollama, vscode, ai, coding-assistant, local-development]
-featured_image: "https://res.cloudinary.com/practicaldev/image/fetch/s--8QJQj0Qr--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/example.jpg"
+featured_image: "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fld6xo11gkyyrg5dubivx.png"
 excerpt: "Learn how to set up Ollama with the Continue VS Code extension to create a powerful local coding assistant that works offline and keeps your code private."
 external: true
 categories: [AI, Development Tools, VS Code]
