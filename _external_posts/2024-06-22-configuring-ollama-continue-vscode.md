@@ -1,6 +1,6 @@
 ---
 title: "Configuring Ollama and Continue VS Code Extension for Local Coding Assistant"
-date: 2023-06-22
+date: 2024-06-22
 author: "manjushsh"
 external_url: "https://dev.to/manjushsh/configuring-ollama-and-continue-vs-code-extension-for-local-coding-assistant-48li"
 platform: "Dev.to"
