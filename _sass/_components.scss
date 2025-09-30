@@ -521,6 +521,53 @@
   margin: var(--space-3xl) 0;
 }
 
+/* External Posts Styling */
+.external-post {
+  position: relative;
+  border-left: 3px solid var(--primary-color);
+  padding-left: var(--space-lg);
+  background: linear-gradient(135deg, rgba(var(--primary-color-rgb), 0.02) 0%, rgba(var(--primary-color-rgb), 0.05) 100%);
+  border-radius: var(--border-radius);
+}
+
+.external-indicator {
+  display: inline-block;
+  margin-left: var(--space-xs);
+  color: var(--primary-color);
+  opacity: 0.7;
+  vertical-align: middle;
+}
+
+.post-platform {
+  display: inline-block;
+  background: var(--primary-color);
+  color: white;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  margin-left: var(--space-md);
+}
+
+.external-post .read-more-link {
+  background: var(--primary-color);
+  color: white;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  transition: all var(--transition-fast);
+}
+
+.external-post .read-more-link:hover {
+  background: var(--primary-dark);
+  color: white;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
 /* Animations */
 @keyframes fadeInUp {
   from {

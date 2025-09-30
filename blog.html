@@ -13,19 +13,34 @@ permalink: /blog/
 </div>
 
 <div class="blog-content">
-  {% if site.posts.size > 0 %}
+  {% assign all_posts = site.posts | concat: site.external_posts | sort: 'date' | reverse %}
+  {% if all_posts.size > 0 %}
     <div class="posts-list">
-      {% for post in site.posts %}
-        <article class="post-preview">
+      {% for post in all_posts %}
+        <article class="post-preview{% if post.external %} external-post{% endif %}">
           <header class="post-preview-header">
             <h2 class="post-preview-title">
-              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              {% if post.external %}
+                <a href="{{ post.external_url }}" target="_blank" rel="noopener noreferrer">{{ post.title }}</a>
+                <span class="external-indicator">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15,3 21,3 21,9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </span>
+              {% else %}
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              {% endif %}
             </h2>
             
             <div class="post-preview-meta">
               <time datetime="{{ post.date | date_to_xmlschema }}">
                 {{ post.date | date: "%B %d, %Y" }}
               </time>
+              {% if post.external %}
+                <span class="post-platform">{{ post.platform }}</span>
+              {% endif %}
               {% if post.tags.size > 0 %}
                 <div class="post-preview-tags">
                   {% for tag in post.tags %}
@@ -38,9 +53,19 @@ permalink: /blog/
 
           {% if post.featured_image %}
             <div class="post-preview-image">
-              <a href="{{ post.url | relative_url }}">
-                <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}" loading="lazy">
-              </a>
+              {% if post.external %}
+                <a href="{{ post.external_url }}" target="_blank" rel="noopener noreferrer">
+                  {% if post.featured_image contains 'http' %}
+                    <img src="{{ post.featured_image }}" alt="{{ post.title }}" loading="lazy">
+                  {% else %}
+                    <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}" loading="lazy">
+                  {% endif %}
+                </a>
+              {% else %}
+                <a href="{{ post.url | relative_url }}">
+                  <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}" loading="lazy">
+                </a>
+              {% endif %}
             </div>
           {% endif %}
 
@@ -51,9 +76,15 @@ permalink: /blog/
               <p>{{ post.content | strip_html | truncate: 250 }}</p>
             {% endif %}
             
-            <a href="{{ post.url | relative_url }}" class="read-more-link">
-              Continue reading →
-            </a>
+            {% if post.external %}
+              <a href="{{ post.external_url }}" target="_blank" rel="noopener noreferrer" class="read-more-link">
+                Read on {{ post.platform }} →
+              </a>
+            {% else %}
+              <a href="{{ post.url | relative_url }}" class="read-more-link">
+                Continue reading →
+              </a>
+            {% endif %}
           </div>
         </article>
         
