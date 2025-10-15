@@ -9,7 +9,7 @@ tech_stack:
   - "CSS3"
   - "Vercel"
 demo_url: "https://tmdb-movie-listings.vercel.app/"
-preview_image: "https://tmdb-movie-listings.vercel.app/og2.jpg"
+preview_image: "https://manjushsh.github.io/manjushsh/assets/images/featured/projects/moviedb.png"
 status: "active"
 featured: true
 categories:
