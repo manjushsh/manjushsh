@@ -10,6 +10,7 @@
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: var(--space-2xl);
   margin-top: var(--space-2xl);
+  align-items: start;
 }
 
 /* Project Card */
@@ -21,6 +22,9 @@
   transition: all var(--transition-normal);
   box-shadow: var(--shadow-sm);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .project-card:hover {
@@ -31,7 +35,9 @@
 
 /* Project Card Link */
 .project-card-link {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   text-decoration: none;
   color: inherit;
 }
@@ -101,6 +107,9 @@
 /* Project Card Content */
 .project-card-content {
   padding: var(--space-xl);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card-title {
@@ -129,6 +138,7 @@
   line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  flex: 1;
 }
 
 /* Tech Stack */
@@ -136,7 +146,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-xs);
-  margin-bottom: var(--space-lg);
+  margin-top: auto;
 }
 
 .tech-badge {
@@ -160,6 +170,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: var(--space-lg) var(--space-xl);
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-primary);
 }
 
 .project-links {
