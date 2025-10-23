@@ -1,5 +1,34 @@
 /* Projects Section Styles */
 
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+/* Projects Page Header */
+.projects-page-header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+  padding: var(--space-2xl) 0;
+}
+
+.projects-page-title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  margin: 0 0 var(--space-lg) 0;
+  color: var(--text-primary);
+}
+
+.projects-page-description {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
 /* Projects Grid */
 .projects-section {
   margin: var(--space-3xl) 0;
@@ -7,9 +36,10 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: var(--space-2xl);
-  margin-top: var(--space-2xl);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-xl);
+  margin: 0 auto;
+  max-width: 1200px;
   align-items: start;
 }
 
@@ -55,7 +85,7 @@
 
 .project-image {
   width: 100%;
-  height: 250px;
+  height: 200px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -106,7 +136,7 @@
 
 /* Project Card Content */
 .project-card-content {
-  padding: var(--space-xl);
+  padding: var(--space-lg);
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -170,7 +200,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--space-lg) var(--space-xl);
+  padding: var(--space-md) var(--space-lg);
   border-top: 1px solid var(--border-color);
   background: var(--bg-primary);
 }
@@ -449,18 +479,25 @@
 @media (max-width: 480px) {
   .projects-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    padding: 0 var(--space-md);
+    margin: var(--space-xl) auto;
   }
   
   .project-card-content {
     padding: var(--space-md);
   }
   
-  .project-links {
-    flex-direction: column;
+  .project-card-footer {
+    padding: var(--space-sm) var(--space-md);
   }
-  
-  .project-link {
-    justify-content: center;
-    text-align: center;
+}
+
+/* Tablet responsive */
+@media (max-width: 768px) and (min-width: 481px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+    padding: 0 var(--space-md);
   }
 }
