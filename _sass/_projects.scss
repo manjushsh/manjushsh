@@ -20,12 +20,25 @@
   overflow: hidden;
   transition: all var(--transition-normal);
   box-shadow: var(--shadow-sm);
+  position: relative;
 }
 
 .project-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
   border-color: var(--primary-color);
+}
+
+/* Project Card Link */
+.project-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card-link:hover {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Project Card Header */
