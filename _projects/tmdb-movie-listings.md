@@ -1,12 +1,15 @@
 ---
 title: "TMDB Movie Listings"
-description: "A responsive movie discovery application built with modern web technologies. Features comprehensive movie search, detailed information pages, and a clean user interface for browsing popular films and TV shows."
-date: 2025-09-27
+description: "A modern, full-featured movie and TV show discovery application built with Next.js 15, React 19, and Tailwind CSS. Features comprehensive search, user authentication, personal lists, and advanced filtering with PostgreSQL backend."
+date: 2025-10-23
 tech_stack:
-  - "React"
-  - "JavaScript"
+  - "Next.js 16"
+  - "React 19"
+  - "TypeScript"
+  - "Tailwind CSS 4"
+  - "PostgreSQL"
   - "The Movie Database API"
-  - "CSS3"
+  - "Radix UI"
   - "Vercel"
 demo_url: "https://tmdb-movie-listings.vercel.app/"
 preview_image: "https://manjushsh.github.io/manjushsh/assets/images/featured/projects/moviedb.png"
@@ -14,68 +17,107 @@ status: "active"
 featured: true
 categories:
   - "Web Development"
+  - "Full-Stack Development"
   - "API Integration"
+  - "Database Design"
 features:
-  - "Movie search and filtering capabilities"
-  - "Detailed movie information and ratings"
-  - "Responsive design for all devices"
-  - "Integration with TMDB API"
-  - "Fast loading with optimized performance"
+  - "Browse trending, popular, and top-rated movies & TV shows"
+  - "Detailed movie/TV pages with cast, crew, images, trailers, and reviews"
+  - "User authentication with secure JWT-based sessions"
+  - "Personal favorites and watchlist management"
+  - "Advanced search and filtering capabilities"
+  - "Responsive design with dark mode support"
+  - "PostgreSQL database with migrations"
+  - "API load balancing with multiple TMDB keys"
+  - "SEO optimized with performance analytics"
+  - "Progressive Web App (PWA) with offline support"
+  - "Multi-language support (8 languages)"
+  - "Streaming service availability with provider links"
+  - "Video integration for trailers and clips"
 ---
 
 ## Project Overview
 
-TMDB Movie Listings is a modern web application that provides users with an intuitive way to discover and explore movies and TV shows. Built using The Movie Database (TMDB) API, it offers comprehensive movie information, ratings, and search capabilities in a beautifully designed interface.
+TMDB Movie Listings is a comprehensive, full-stack web application that provides users with an extensive platform to discover, explore, and manage movies and TV shows. Built with cutting-edge technologies including Next.js 16, React 19, it offers a rich, interactive experience with user authentication, personal lists, and advanced filtering capabilities.
 
 ## Key Features
 
-### Movie Discovery
-- **Search Functionality**: Comprehensive search across movies and TV shows
-- **Popular Movies**: Curated lists of trending and popular content
-- **Detailed Information**: Cast, crew, ratings, reviews, and plot summaries
-- **High-Quality Images**: Movie posters and backdrop images
+### Content Discovery
+- **Browse Content**: Trending, popular, top-rated movies and TV shows
+- **Detailed Pages**: Comprehensive information with cast, crew, images, trailers, reviews, and similar content
+- **Advanced Search**: Multi-criteria search with genre, year, rating filters
+- **People Pages**: Detailed actor and crew member profiles with filmographies
 
-### User Experience
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- **Fast Performance**: Optimized API calls and efficient data loading
-- **Clean Interface**: Intuitive navigation and modern design principles
-- **Real-time Updates**: Live data from TMDB's comprehensive database
+### User Features
+- **Authentication System**: Secure sign-up/sign-in with JWT-based sessions
+- **Personal Lists**: Favorites and watchlist management with add/remove functionality
+- **User Profiles**: Personalized user profile management
+- **Cross-Device Sync**: User data synchronized across devices
+
+### Technical Features
+- **Responsive Design**: Mobile-first design with dark mode support
+- **Performance Optimized**: Fast loading with Next.js 16 optimizations and Vercel analytics
+- **Database Integration**: PostgreSQL backend with migration scripts
+- **API Load Balancing**: Multiple TMDB API keys for enhanced reliability
+- **SEO Optimized**: Proper meta tags, structured data, and performance insights
+- **Progressive Web App**: Service worker, offline support, and installable app experience
+- **Internationalization**: Multi-language support with 8 locales (EN, DE, ES, FR, HI, IT, JA, ZH)
+- **Streaming Integration**: Watch provider information with direct links to streaming services
+- **Video Players**: Embedded trailers and video content for movies, TV shows, and episodes
 
 ## Technical Implementation
 
 ### Frontend Architecture
-- **React Framework**: Component-based architecture for maintainable code
-- **Modern JavaScript**: ES6+ features and async/await for API calls
-- **CSS3 Styling**: Responsive design with Flexbox and Grid layouts
-- **State Management**: Efficient state handling for movie data
+- **Next.js 16 Framework**: App Router with server and client components for optimal performance
+- **React 19**: Latest React features with enhanced concurrent rendering
+- **TypeScript**: Full type safety across the entire application
+- **Tailwind CSS 4**: Utility-first styling with modern design system
+- **Radix UI Components**: Accessible, unstyled UI primitives for complex interactions
 
-### API Integration
-- **TMDB API**: Integration with The Movie Database's REST API
-- **Error Handling**: Robust error handling for network requests
-- **Data Caching**: Optimized data fetching and caching strategies
-- **Rate Limiting**: Proper API usage following TMDB guidelines
+### Backend & Database
+- **PostgreSQL Database**: Robust relational database for user data and application state
+- **Database Migrations**: Version-controlled schema changes with migration scripts
+- **API Routes**: RESTful endpoints for authentication, user management, and data operations
+- **JWT Authentication**: Secure token-based authentication with Jose library
 
-### Performance Optimization
-- **Lazy Loading**: Images and content loaded on demand
-- **Code Splitting**: Optimized bundle sizes for faster loading
-- **SEO Friendly**: Proper meta tags and structured data
-- **Vercel Deployment**: Edge deployment for global performance
+### API Integration & Performance
+- **TMDB API Integration**: Comprehensive integration with The Movie Database API
+- **API Load Balancing**: Multiple API keys for improved reliability and rate limiting
+- **Error Handling**: Robust error boundaries and graceful degradation
+- **Caching Strategies**: Optimized data fetching with Next.js caching
+- **Performance Monitoring**: Vercel Analytics and Speed Insights integration
+
+### UI/UX Features
+- **Interactive Components**: Carousels (Embla), dialogs, tooltips, and form components
+- **Form Management**: React Hook Form with Zod validation for type-safe forms
+- **Theme System**: Dark/light mode support with next-themes
+- **Toast Notifications**: User feedback with Sonner toast library
+- **Responsive Grid Layouts**: CSS Grid and Flexbox for adaptive layouts
 
 ## Development Highlights
 
-### Responsive Design
-The application features a mobile-first responsive design that adapts seamlessly across all device sizes. Special attention was paid to touch interactions on mobile devices and optimal viewing experiences on larger screens.
+### Modern Stack Integration
+The application showcases the latest web development technologies including Next.js 16's App Router, React 19's enhanced features, and Tailwind CSS 4's new capabilities. The integration demonstrates best practices for modern full-stack development.
 
-### API Data Management
-Implemented efficient data fetching patterns with proper error boundaries and loading states. The application gracefully handles network issues and provides meaningful feedback to users.
+### Database Architecture
+Implemented a robust PostgreSQL database schema with proper migration scripts, enabling scalable user management, favorites, and watchlist functionality. The database design supports future feature expansions.
 
-### User Interface Design
-Created an engaging and intuitive interface that makes movie discovery enjoyable. The design focuses on showcasing movie content with high-quality images and easy-to-read information layouts.
+### Authentication & Security
+Built a secure authentication system using JWT tokens with the Jose library, providing session management, protected routes, and user data security. The system includes proper error handling and validation.
+
+### Performance & User Experience
+Created an exceptional user experience with responsive design, dark mode support, interactive UI components, and optimized loading patterns. Special attention was paid to accessibility and mobile-first design principles.
+
+### API Architecture
+Developed a comprehensive API layer with multiple endpoints for authentication, content discovery, user management, and debugging. Implemented load balancing with multiple TMDB API keys for enhanced reliability.
 
 ## Future Enhancements
 
-- User authentication and personal watchlists
-- Advanced filtering and sorting options
-- Movie recommendations based on viewing history
-- Integration with streaming service availability
-- Social features for sharing and discussing movies
+- Advanced filtering with more granular options (director, production company, etc.)
+- Social features for user reviews and ratings
+- Movie recommendation engine based on user preferences
+- Enhanced analytics and user insights dashboard
+- Integration with real-time streaming service APIs for direct playback
+- Advanced PWA features like background sync and push notifications
+- User-generated content features (custom lists, reviews)
+- Enhanced video player with quality controls and subtitles
