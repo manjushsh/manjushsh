@@ -1,6 +1,6 @@
 ---
-title: "TMDB Movie Listings"
-description: "A modern, full-featured movie and TV show discovery application built with Next.js 15, React 19, and Tailwind CSS. Features comprehensive search, user authentication, personal lists, and advanced filtering with PostgreSQL backend."
+title: "The MovieDB"
+description: "A modern, full-featured movie, TV show and cast discovery application built with Next.js 16, React 19, and Tailwind CSS. Features comprehensive search, user authentication, personal lists, and advanced filtering with PostgreSQL."
 date: 2025-10-23
 tech_stack:
   - "Next.js 16"
@@ -10,7 +10,6 @@ tech_stack:
   - "PostgreSQL"
   - "The Movie Database API"
   - "Radix UI"
-  - "Vercel"
 demo_url: "https://tmdb-movie-listings.vercel.app/"
 preview_image: "https://manjushsh.github.io/manjushsh/assets/images/featured/projects/moviedb.png"
 status: "active"
@@ -23,12 +22,12 @@ categories:
 features:
   - "Browse trending, popular, and top-rated movies & TV shows"
   - "Detailed movie/TV pages with cast, crew, images, trailers, and reviews"
+  - "Browse seasons and episodes for TV shows including upcoming episodes for seasons"
   - "User authentication with secure JWT-based sessions"
   - "Personal favorites and watchlist management"
   - "Advanced search and filtering capabilities"
   - "Responsive design with dark mode support"
   - "PostgreSQL database with migrations"
-  - "API load balancing with multiple TMDB keys"
   - "SEO optimized with performance analytics"
   - "Progressive Web App (PWA) with offline support"
   - "Multi-language support (8 languages)"
@@ -55,15 +54,14 @@ TMDB Movie Listings is a comprehensive, full-stack web application that provides
 - **Cross-Device Sync**: User data synchronized across devices
 
 ### Technical Features
-- **Responsive Design**: Mobile-first design with dark mode support
+- **Responsive and Accessible Design**: Mobile-first design with dark mode support and accessibility considerations
 - **Performance Optimized**: Fast loading with Next.js 16 optimizations and Vercel analytics
-- **Database Integration**: PostgreSQL backend with migration scripts
-- **API Load Balancing**: Multiple TMDB API keys for enhanced reliability
 - **SEO Optimized**: Proper meta tags, structured data, and performance insights
 - **Progressive Web App**: Service worker, offline support, and installable app experience
 - **Internationalization**: Multi-language support with 8 locales (EN, DE, ES, FR, HI, IT, JA, ZH)
 - **Streaming Integration**: Watch provider information with direct links to streaming services
-- **Video Players**: Embedded trailers and video content for movies, TV shows, and episodes
+- **Video Players**: Embedded trailers and video content for movies, TV shows (seasons and episodes including upcoming episodes)
+- **Database Integration**: PostgreSQL backend for user data and application state
 
 ## Technical Implementation
 
@@ -114,10 +112,10 @@ Developed a comprehensive API layer with multiple endpoints for authentication, 
 ## Future Enhancements
 
 - Advanced filtering with more granular options (director, production company, etc.)
-- Social features for user reviews and ratings
 - Movie recommendation engine based on user preferences
+- User-generated content features (custom lists, reviews)
+- Social features for user reviews and ratings (friends, followers with moderation)
+- Advanced PWA features like background sync and push notifications
 - Enhanced analytics and user insights dashboard
 - Integration with real-time streaming service APIs for direct playback
-- Advanced PWA features like background sync and push notifications
-- User-generated content features (custom lists, reviews)
 - Enhanced video player with quality controls and subtitles
