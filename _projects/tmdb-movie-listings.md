@@ -1,6 +1,6 @@
 ---
 title: "The MovieDB"
-description: "A modern, full-featured movie, TV show and cast discovery application built with Next.js 16, React 19, and Tailwind CSS. Features comprehensive search, user authentication, personal lists, and advanced filtering with PostgreSQL."
+description: "A modern, full-featured movie, TV show and cast discovery application built with Next.js 16, React 19, and Tailwind CSS. Features comprehensive search, user authentication, personal lists, and advanced filtering with user details stored in PostgreSQL."
 date: 2025-10-23
 tech_stack:
   - "Next.js 16"
