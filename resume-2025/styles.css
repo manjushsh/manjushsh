@@ -1,0 +1,558 @@
+/* Optimized font loading - fonts preloaded in HTML */
+:root {
+  color-scheme: dark light;
+  
+  /* Theme Variables using light-dark() function with fallbacks */
+  --bg-base: light-dark(#f8fafc, #0f172a);
+  --bg-panel: light-dark(rgba(255, 255, 255, 0.8), rgba(30, 41, 59, 0.4));
+  --bg-panel-hover: light-dark(rgba(255, 255, 255, 0.95), rgba(30, 41, 59, 0.6));
+  
+  --text-primary: light-dark(#0f172a, #ffffff);
+  --text-secondary: light-dark(#334155, #cbd5e1);
+  --text-muted: light-dark(#64748b, #94a3b8);
+  --text-accent: light-dark(#94a3b8, #64748b);
+  
+  --border-light: light-dark(rgba(15, 23, 42, 0.1), rgba(148, 163, 184, 0.1));
+  --border-medium: light-dark(rgba(15, 23, 42, 0.2), rgba(148, 163, 184, 0.2));
+  --border-hover: light-dark(rgba(59, 130, 246, 0.3), rgba(59, 130, 246, 0.3));
+  
+  --accent-blue: light-dark(#2563eb, #3b82f6);
+  --accent-emerald: light-dark(#059669, #10b981);
+  --accent-purple: light-dark(#7c3aed, #8b5cf6);
+  
+  --shadow: light-dark(rgba(15, 23, 42, 0.1), rgba(0, 0, 0, 0.2));
+  --glass-bg: light-dark(rgba(255, 255, 255, 0.7), rgba(30, 41, 59, 0.4));
+  
+  /* Fallbacks for browsers without light-dark() support */
+  --bg-base-fallback: #0f172a;
+  --text-primary-fallback: #ffffff;
+  --text-secondary-fallback: #cbd5e1;
+}
+
+/* Light mode overrides for browsers without light-dark() support */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --bg-base-fallback: #f8fafc;
+    --text-primary-fallback: #0f172a;
+    --text-secondary-fallback: #334155;
+  }
+}
+
+/* Theme overrides */
+[data-theme="light"] {
+  color-scheme: light;
+  --bg-base: #f8fafc;
+  --bg-panel: rgba(255, 255, 255, 0.8);
+  --bg-panel-hover: rgba(255, 255, 255, 0.95);
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-accent: #94a3b8;
+  --border-light: rgba(15, 23, 42, 0.1);
+  --border-medium: rgba(15, 23, 42, 0.2);
+  --shadow: rgba(15, 23, 42, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg-base: #0f172a;
+  --bg-panel: rgba(30, 41, 59, 0.4);
+  --bg-panel-hover: rgba(30, 41, 59, 0.6);
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-accent: #64748b;
+  --border-light: rgba(148, 163, 184, 0.1);
+  --border-medium: rgba(148, 163, 184, 0.2);
+  --shadow: rgba(0, 0, 0, 0.2);
+  --glass-bg: rgba(30, 41, 59, 0.4);
+}
+
+/* Base Reset & Font */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg-base, var(--bg-base-fallback));
+  color: var(--text-secondary, var(--text-secondary-fallback));
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Glassmorphism Panel - The Core UI Element */
+.glass-panel {
+  background: var(--bg-panel, var(--glass-bg));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px var(--shadow),
+    0 2px 4px -1px var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.glass-panel:hover {
+  background: var(--bg-panel-hover);
+  border-color: var(--border-hover);
+}
+
+/* Typography Helpers */
+.section-title {
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-primary, var(--text-primary-fallback));
+}
+
+/* Tech Stack Pills */
+.skill-pill {
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all 0.2s;
+  display: inline-block;
+}
+
+/* Primary: React, Node */
+.skill-primary {
+  background: color-mix(in srgb, var(--accent-blue) 15%, transparent);
+  color: color-mix(in srgb, var(--accent-blue) 85%, black);
+  border: 1px solid color-mix(in srgb, var(--accent-blue) 30%, transparent);
+}
+
+/* Infrastructure: Kafka, Docker */
+.skill-infra {
+  background: color-mix(in srgb, var(--accent-emerald) 15%, transparent);
+  color: color-mix(in srgb, var(--accent-emerald) 85%, black);
+  border: 1px solid color-mix(in srgb, var(--accent-emerald) 30%, transparent);
+}
+
+/* Secondary: Python, etc */
+.skill-secondary {
+  background: color-mix(in srgb, var(--text-muted) 15%, transparent);
+  color: var(--text-secondary);
+  border: 1px solid color-mix(in srgb, var(--text-muted) 30%, transparent);
+}
+
+/* Timeline Components */
+.timeline-dot {
+  position: absolute;
+  left: 12px; /* Centers on the 2px line at left: 19px */
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  z-index: 10;
+  border-width: 3px;
+}
+
+.experience-card {
+  background: var(--bg-panel);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-left: 2px solid var(--border-medium);
+  transition: border-left-color 0.2s, background-color 0.3s ease;
+}
+
+.experience-card:hover {
+  border-left-color: var(--accent-blue);
+  background: var(--bg-panel-hover);
+}
+
+.experience-text {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Chart Container Fix */
+.chart-container {
+  position: relative;
+  height: 200px;
+  width: 100%;
+}
+
+/* Mobile Chart Responsiveness */
+@media (max-width: 768px) {
+  .chart-container {
+    height: 180px;
+  }
+  
+  .chart-container.doughnut {
+    height: 220px;
+  }
+  
+  .chart-container.bar {
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-container {
+    height: 160px;
+  }
+  
+  .chart-container.doughnut {
+    height: 200px;
+  }
+  
+  .chart-container.bar {
+    height: 140px;
+  }
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive Improvements */
+@media (max-width: 768px) {
+  /* Improve touch targets */
+  .skill-pill {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    margin: 2px;
+  }
+  
+  /* Better mobile typography */
+  .section-title {
+    font-size: 0.8rem;
+  }
+  
+  /* Improve glass panel spacing */
+  .glass-panel {
+    padding: 1rem;
+  }
+  
+  /* Better mobile timeline */
+  .timeline-dot {
+    left: 8px;
+    width: 12px;
+    height: 12px;
+  }
+  
+  .experience-card {
+    padding: 0.75rem;
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small screens */
+  .glass-panel {
+    padding: 0.75rem;
+  }
+  
+  .skill-pill {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+  
+  /* Compact timeline for very small screens */
+  .timeline-dot {
+    left: 6px;
+    width: 10px;
+    height: 10px;
+  }
+  
+  .experience-card {
+    padding: 0.5rem;
+    margin-left: 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  /* Better mobile stats grid */
+  .stats-mobile-adjust {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  
+  /* Mobile theme toggle adjustments */
+  .theme-toggle {
+    top: 1rem;
+    right: 1rem;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+
+/* Touch Target Improvements for Mobile */
+.touch-target {
+  min-height: 44px !important;
+  min-width: 44px !important;
+}
+
+@media (max-width: 480px) {
+  .touch-target {
+    min-height: 48px !important;
+    min-width: 48px !important;
+  }
+}
+
+/* Loading States */
+.loading-skeleton {
+  background: linear-gradient(90deg, var(--border-light) 25%, var(--border-medium) 50%, var(--border-light) 75%);
+  background-size: 200% 100%;
+  animation: loading-shimmer 1.5s infinite;
+}
+
+@keyframes loading-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.chart-loading {
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade-in.loaded {
+  opacity: 1;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 50;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  padding: 0.75rem;
+  border-radius: 9999px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px -1px var(--shadow);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.theme-toggle:hover {
+  background: var(--bg-panel-hover);
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+  transform: scale(1.05);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+.theme-toggle .icon {
+  transition: transform 0.3s ease, opacity 0.2s ease;
+  position: absolute;
+}
+
+.theme-toggle .icon.sun {
+  opacity: 0;
+  transform: rotate(180deg);
+}
+
+.theme-toggle .icon.moon {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+[data-theme="light"] .theme-toggle .icon.sun {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+[data-theme="light"] .theme-toggle .icon.moon {
+  opacity: 0;
+  transform: rotate(-180deg);
+}
+
+/* Theme-aware utility classes */
+.text-theme-primary { color: var(--text-primary) !important; }
+.text-theme-secondary { color: var(--text-secondary) !important; }
+.text-theme-muted { color: var(--text-muted) !important; }
+.text-theme-accent { color: var(--text-accent) !important; }
+
+.bg-theme-base { background-color: var(--bg-base) !important; }
+.bg-theme-panel { background-color: var(--bg-panel) !important; }
+
+/* Specific theme overrides for elements that need to stay consistent */
+.text-accent-blue { color: var(--accent-blue) !important; }
+.text-accent-emerald { color: var(--accent-emerald) !important; }
+.text-accent-purple { color: var(--accent-purple) !important; }
+
+/* Light theme specific skill pill improvements */
+[data-theme="light"] .skill-primary {
+  background: rgba(59, 130, 246, 0.12);
+  color: #1d4ed8;
+  border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+[data-theme="light"] .skill-infra {
+  background: rgba(16, 185, 129, 0.12);
+  color: #047857;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+[data-theme="light"] .skill-secondary {
+  background: rgba(100, 116, 139, 0.12);
+  color: #475569;
+  border: 1px solid rgba(100, 116, 139, 0.25);
+}
+
+/* Light theme text improvements for better readability */
+[data-theme="light"] .text-theme-primary {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .text-theme-secondary {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .text-theme-muted {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .text-theme-accent {
+  color: #94a3b8 !important;
+}
+
+/* Improve glass panels in light mode */
+[data-theme="light"] .glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.1), 0 2px 4px -1px rgba(15, 23, 42, 0.06);
+}
+
+[data-theme="light"] .glass-panel:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+/* Force override all hardcoded text colors in light theme */
+[data-theme="light"] .text-white {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .text-slate-300 {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .text-slate-400 {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .text-slate-500 {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .text-blue-400 {
+  color: #2563eb !important;
+}
+
+/* Fix specific elements that resist theme changes */
+[data-theme="light"] h1,
+[data-theme="light"] h2, 
+[data-theme="light"] h3 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] p {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .experience-text {
+  color: #64748b !important;
+}
+
+[data-theme="light"] ul li {
+  color: #334155 !important;
+}
+
+/* Fix button text colors */
+[data-theme="light"] button:hover {
+  color: #0f172a !important;
+}
+
+/* Professional Experience Cards - Light Theme Enhancements */
+[data-theme="light"] .experience-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-left-color: rgba(15, 23, 42, 0.2);
+  box-shadow: 0 2px 4px -1px rgba(15, 23, 42, 0.1);
+}
+
+[data-theme="light"] .experience-card:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-left-color: #2563eb;
+}
+
+[data-theme="light"] .experience-card h3 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .experience-card h4 {
+  color: #1e293b !important;
+}
+
+[data-theme="light"] .experience-card .experience-text {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .experience-card span {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .experience-card .text-xs {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .experience-card .font-mono {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .experience-card ul li {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .experience-card b,
+[data-theme="light"] .experience-card strong {
+  color: #1e293b !important;
+}
+
+/* Timeline dots in light theme */
+[data-theme="light"] .timeline-dot {
+  background-color: #e2e8f0 !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* Company/date text in light theme */
+[data-theme="light"] .text-sm.mb-4 {
+  color: #64748b !important;
+}

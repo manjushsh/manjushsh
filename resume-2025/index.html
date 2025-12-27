@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Software Engineer Portfolio</title>
+
+  <!-- DNS prefetch for external resources -->
+  <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+
+  <!-- Preload critical fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="/work-contribution-report/styles.css" as="style">
+  <link rel="preload" href="/work-contribution-report/data.js" as="script">
+  <link rel="preload" href="/work-contribution-report/script.js" as="script">
+  
+  <!-- Critical CSS -->
+  <style>
+    /* Inline critical loading styles */
+    .loading-skeleton {
+      background: linear-gradient(90deg, rgba(148, 163, 184, 0.1) 25%, rgba(148, 163, 184, 0.2) 50%, rgba(148, 163, 184, 0.1) 75%);
+      background-size: 200% 100%;
+      animation: loading 1.5s infinite;
+    }
+    @keyframes loading {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    .chart-loading {
+      height: 200px;
+      border-radius: 8px;
+    }
+    /* Prevent layout shift */
+    .chart-container {
+      min-height: 200px;
+    }
+    @media (max-width: 768px) {
+      .chart-container { min-height: 180px; }
+      .chart-container.doughnut { min-height: 220px; }
+      .chart-container.bar { min-height: 160px; }
+    }
+  </style>
+
+  <!-- Non-blocking external resources -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"></noscript>
+
+  <link rel="stylesheet" href="/work-contribution-report/styles.css" />
+</head>
+
+<body class="font-sans p-6 md:p-12 min-h-screen" data-theme="dark">
+  <!-- Theme Toggle Button -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+    <i class="fas fa-sun icon sun"></i>
+    <i class="fas fa-moon icon moon"></i>
+  </button>
+
+  <header class="max-w-7xl mx-auto mb-12">
+    <div class="flex flex-col lg:flex-row justify-between items-start gap-8">
+      <div> <!--  class="lg:w-3/3" -->
+        <span
+          class="inline-block px-3 py-1 mb-4 rounded-full bg-blue-900/30 text-blue-400 border border-blue-800/50 text-xs font-bold uppercase tracking-wider">
+          6+ Years Exp • Software Engineer
+        </span>
+        <h1 class="text-5xl md:text-6xl font-bold text-theme-primary mb-6 tracking-tight leading-tight">
+          Full Stack Engineer
+        </h1>
+        <p class="text-xl text-theme-secondary leading-relaxed">  <!-- max-w-2xl -->
+          Software Engineer specializing in the <b>React & Node.js ecosystem</b>.
+          <br />
+          <!-- Expertise in migrating legacy monoliths to
+          <span class="text-theme-primary">Scalable Microservices</span> and
+          <span class="text-theme-primary">Real-time Kafka Streams</span>. -->
+        </p>
+      </div>
+
+      <!-- <div class="w-full lg:w-1/3 grid grid-cols-3 sm:grid-cols-3 gap-4 stats-mobile-adjust">
+        <div class="glass-panel p-3 sm:p-4 flex flex-col justify-center items-center border-t-4 border-blue-500">
+          <span class="text-2xl sm:text-3xl font-bold text-theme-primary">226</span>
+          <span class="text-[9px] sm:text-[10px] uppercase font-bold text-theme-muted mt-1 tracking-wider">Code
+            Ships</span>
+        </div>
+        <div class="glass-panel p-3 sm:p-4 flex flex-col justify-center items-center border-t-4 border-emerald-500">
+          <span class="text-2xl sm:text-3xl font-bold text-theme-primary">85%</span>
+          <span class="text-[9px] sm:text-[10px] uppercase font-bold text-theme-muted mt-1 tracking-wider">Test
+            Coverage</span>
+        </div>
+        <div class="glass-panel p-3 sm:p-4 flex flex-col justify-center items-center border-t-4 border-purple-500">
+          <span class="text-2xl sm:text-3xl font-bold text-theme-primary">50%</span>
+          <span class="text-[9px] sm:text-[10px] uppercase font-bold text-theme-muted mt-1 tracking-wider">Cost Reduction</span>
+        </div>
+        <div class="col-span-3 text-center">
+          <span class="text-[10px] text-slate-600 font-mono">@Pluralsight</span>
+        </div>
+      </div> -->
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <div class="lg:col-span-4 space-y-6">
+      <div class="glass-panel p-6">
+        <h3 class="section-title mb-6">
+          <i class="fas fa-code text-blue-500 mr-2"></i> Core Competencies
+        </h3>
+
+        <div class="space-y-6">
+          <div>
+            <div class="text-xs text-slate-500 mb-3 font-bold uppercase tracking-wider">
+              Primary Stack (Daily)
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-pill skill-primary">React.js</span>
+              <span class="skill-pill skill-primary">Node.js</span>
+              <span class="skill-pill skill-primary">Express.js</span>
+              <span class="skill-pill skill-primary">TypeScript</span>
+              <span class="skill-pill skill-primary">SQL</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="text-xs text-slate-500 mb-3 font-bold uppercase tracking-wider">
+              Architecture & Ops
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-pill skill-infra">Apache Kafka</span>
+              <span class="skill-pill skill-infra">Docker</span>
+              <span class="skill-pill skill-infra">Amazon Web Services</span>
+              <span class="skill-pill skill-infra">GitLab CI/CD</span>
+            </div> 
+          </div>
+
+          <div>
+            <div class="text-xs text-slate-500 mb-3 font-bold uppercase tracking-wider">
+              Secondary / Familiar
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-pill skill-secondary">Next.js</span>
+              <span class="skill-pill skill-secondary">Go</span>
+              <span class="skill-pill skill-secondary">Python</span>
+              <span class="skill-pill skill-secondary">GraphQL</span>
+              <span class="skill-pill skill-secondary">Redux Toolkit</span>
+              <span class="skill-pill skill-secondary">Redis</span>
+              <span class="skill-pill skill-secondary">Sequelize.js</span>
+              <span class="skill-pill skill-secondary">Koa</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-panel p-4 sm:p-6 relative group">
+        <div
+          class="absolute top-3 sm:top-4 right-3 sm:right-4 text-[9px] sm:text-[10px] text-blue-400 opacity-50 group-hover:opacity-100 transition">
+          Click for Breakdown
+        </div>
+        <h3 class="section-title mb-3 sm:mb-4">Engineering Focus</h3>
+        <div class="chart-container doughnut">
+          <canvas id="focusChart"></canvas>
+        </div>
+      </div>
+
+      <div class="glass-panel p-4 sm:p-6 relative group">
+        <div
+          class="absolute top-3 sm:top-4 right-3 sm:right-4 text-[9px] sm:text-[10px] text-blue-400 opacity-50 group-hover:opacity-100 transition">
+          Click for Breakdown
+        </div>
+        <h3 class="section-title mb-3 sm:mb-4">Domain Breakdown</h3>
+        <div class="chart-container bar">
+          <canvas id="domainBarChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-8">
+      <div id="drilldown-container" class="hidden mb-8 glass-panel p-6 border-l-4 border-blue-500 animate-fade-in">
+        <div class="flex justify-between items-center mb-6 border-b border-slate-700/50 pb-4">
+          <div>
+            <h3 id="drilldown-title" class="text-xl font-bold text-white">
+              Summary
+            </h3>
+            <div class="text-xs text-slate-400 mt-1">
+              Contribution Metrics Breakdown
+            </div>
+          </div>
+          <button onclick="closeDrilldown()" class=\"text-slate-500 hover:text-white p-2 bg-slate-800 rounded-full w-8
+            h-8 flex items-center justify-center transition touch-target\">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div
+            class="bg-slate-900/40 rounded-xl p-6 text-center flex flex-col justify-center border border-slate-700/50">
+            <div class="text-xs text-slate-500 uppercase font-bold mb-2">
+              Total Contributions
+            </div>
+            <div id="dd-total" class="text-5xl font-bold text-white tracking-tighter">
+              0
+            </div>
+          </div>
+          <div class="bg-slate-900/40 rounded-xl p-6 border border-slate-700/50">
+            <div class="text-xs text-slate-500 uppercase font-bold mb-4">
+              Impact by System
+            </div>
+            <div id="dd-systems" class="space-y-3"></div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-theme-primary mb-8 pb-2 border-b border-slate-800 flex items-center gap-3">
+        <i class="fas fa-briefcase text-slate-600"></i> Professional
+        Experience
+      </h2>
+
+      <div class="relative pl-4 space-y-12">
+        <div class="absolute left-[19px] top-2 bottom-0 w-[2px] bg-slate-800"></div>
+
+        <div class="relative pl-12">
+          <div class="timeline-dot bg-blue-500 border-blue-900 shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
+
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+            <h3 class="text-xl font-bold text-white">
+              Software Engineer
+            </h3>
+            <span
+              class="text-xs font-mono text-blue-300 bg-blue-900/20 px-3 py-1 rounded-full border border-blue-900/30">Oct
+              2023 &hyphen; Present</span>
+          </div>
+          <div class="text-theme-secondary text-sm font-medium mb-6">
+            <a href="https://www.linkedin.com/company/pluralsight" target="_blank">Pluralsight</a> • <a href="https://maps.app.goo.gl/DnrVDQ8axfvpdLZ47" target="_blank">Bengaluru</a>
+          </div>
+
+          <div class="space-y-5">
+            <div class="experience-card">
+              <h4 class="text-slate-200 font-semibold text-sm mb-2 flex items-center gap-2">
+                <i class="fas fa-users text-blue-500 w-4"></i> Agile
+                Leadership
+              </h4>
+              <p class="experience-text">
+                Led agile team of 4 engineers, facilitating sprint planning,
+                daily standups, pair programming, and retrospectives. Mentored
+                and onboarded new team members.
+              </p>
+            </div>
+
+            <div class="experience-card">
+              <h4 class="text-slate-200 font-semibold text-sm mb-2 flex items-center gap-2">
+                <i class="fas fa-bolt text-yellow-500 w-4"></i> Kafka
+                Architecture Redesign
+              </h4>
+              <p class="experience-text">
+                Transitioned Library Management (tool) ingestion from batch cron to
+                <b>Event-Driven Kafka Streaming</b>. Eliminated data
+                inconsistencies, enabled real-time updates for 80K+ items, and
+                reduced infrastructure costs by <b>50%</b>.
+              </p>
+            </div>
+
+            <div class="experience-card">
+              <h4 class="text-slate-200 font-semibold text-sm mb-2 flex items-center gap-2">
+                <i class="fas fa-robot text-purple-500 w-4"></i> AI & Product
+                Features
+              </h4>
+              <p class="experience-text">
+                Collaborated to build an <b>AI Assistant SPA</b> overlay
+                (React 18) serving ~150K+ weekly users. Developed internal tag
+                browse tool using React, Express, Vite etc.
+              </p>
+            </div>
+
+            <div class="experience-card">
+              <h4 class="text-slate-200 font-semibold text-sm mb-2 flex items-center gap-2">
+                <i class="fas fa-shield-alt text-emerald-500 w-4"></i>
+                Reliability & Ops
+              </h4>
+              <p class="experience-text">
+                Improved test coverage from 45% to <b>85%+</b>. Led
+                PII-compliant userId migration with zero downtime. Maintained
+                scraper pipelines processing 300K+ monthly data points.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative pl-12">
+          <div class="timeline-dot bg-slate-700 border-slate-900"></div>
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+            <h3 class="text-lg font-bold text-theme-primary">
+              Full Stack Engineer
+            </h3>
+            <span class="text-xs font-mono text-theme-muted">Nov 2022 &hyphen; Oct 2023</span>
+          </div>
+          <div class="text-theme-muted text-sm mb-4">
+            <a href="https://www.linkedin.com/company/nexshore" target="_blank">Nexshore Technologies</a> • <a href="https://maps.app.goo.gl/NwZuATmhK6Jz9PNx5" target="_blank">Bengaluru</a>
+          </div>
+          <ul class="list-disc pl-4 text-theme-secondary text-sm space-y-2 marker:text-slate-600">
+            <li>
+              Developed a Back Office Admin Panel for user asset management
+              and PEP user handling.
+            </li>
+            <li>
+              Integrated third-party services like <b>Sprinklr</b> for
+              customer support and <b>TradingView</b> for financial
+              visualizations.
+            </li>
+            <li>
+              Optimized deposit/withdrawal threshold management systems for
+              high-volume transactions.
+            </li>
+          </ul>
+        </div>
+
+        <div class="relative pl-12">
+          <div class="timeline-dot bg-slate-700 border-slate-900"></div>
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+            <h3 class="text-lg font-bold text-theme-primary">
+              Senior Software Engineer
+            </h3>
+            <span class="text-xs font-mono text-theme-muted">Jun 2022 &hyphen; Nov 2022</span>
+          </div>
+          <div class="text-theme-muted text-sm mb-4">
+            <a href="https://in.linkedin.com/company/birbalai-ai-company">BirbalAI</a> • Bengaluru
+          </div>
+          <ul class="list-disc pl-4 text-theme-secondary text-sm space-y-2 marker:text-slate-600">
+            <li>
+              Developed frontend architectures for candidate job portals using
+              <b>React.js</b> and <b>GraphQL</b>.
+            </li>
+            <li>
+              Built API integrations for "MoveEz" application, ensuring
+              seamless data flow.
+            </li>
+          </ul>
+        </div>
+
+        <div class="relative pl-12">
+          <div class="timeline-dot bg-slate-700 border-slate-900"></div>
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+            <h3 class="text-lg font-bold text-theme-primary">
+              Software Engineer
+            </h3>
+            <span class="text-xs font-mono text-theme-muted">Jul 2019 &hyphen; Jun 2022</span>
+          </div>
+          <div class="text-theme-muted text-sm mb-4">
+            <a href="https://in.linkedin.com/company/freespace" target="_blank">Freespace</a> • <a href="https://maps.app.goo.gl/PxrACvdKLoQgDdPbA" target="_blank">Mumbai</a>
+          </div>
+          <ul class="list-disc pl-4 text-theme-secondary text-sm space-y-2 marker:text-slate-600">
+            <li>
+              Migrated legacy applications to <b>React 17</b>, modernizing the
+              frontend stack.
+            </li>
+            <li>
+              Automated report generation using Node.js and PDFMake on
+              <b>AWS Lambda</b>.
+            </li>
+            <li>
+              Created internal "Sharing Ratio Tool" for data utilization
+              analysis.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/work-contribution-report/data.js"></script>
+  <script src="/work-contribution-report/script.js"></script>
+</body>
+
+</html>
