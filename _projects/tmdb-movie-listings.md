@@ -10,7 +10,7 @@ tech_stack:
   - "PostgreSQL"
   - "The Movie Database API"
   - "Radix UI"
-demo_url: "https://tmdb-movie-listings.vercel.app/"
+demo_url: "https://moviedb.manjushsh.com"
 preview_image: "https://manjushsh.github.io/manjushsh/assets/images/featured/projects/moviedb.png"
 status: "active"
 featured: true
